@@ -22,6 +22,10 @@ abstract class Vehicle implements FormattedAccess{
         return number_format($this->price, 2);
     }
 
+    function getOptions() {
+        return "(No additional options)";
+    }
+
 }
 
 class Car extends Vehicle{
@@ -37,6 +41,7 @@ class Car extends Vehicle{
 }
 
 class Truck extends Vehicle {
+
     function __construct($make, $model, $year, $mileage, $price, $image, $engine) {
         $this->make = $make;
         $this->model = $model;
@@ -48,6 +53,10 @@ class Truck extends Vehicle {
     }
 
     var $engine;
+
+    function getOptions() {
+        return "Towing package availabe at $1,000.00";
+    }
 }
 
 $vehicle1 = new Car("Astro", "Estrella", "2021", 500, 50000, "veh-01.jpg");

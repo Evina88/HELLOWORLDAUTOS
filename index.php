@@ -38,8 +38,8 @@
         <?php foreach($vehicles as $vehicle) {
             
             $mileage = $vehicle->getFormattedMileage();
-
             $price = $vehicle->getFormattedPrice();
+            $options = $vehicle->getOptions();
 
             $engineSpan = "";
 
@@ -58,7 +58,8 @@
                     <hr class="vehicle-hr">
                     <p class="right-aligned">$engineSpan<span class="data-label">Year: </span><span class="vehicle-year">$vehicle->year</span>
                     &nbsp;&nbsp;<span class="data-label">Mileage: </span><span class="vehicle-mileage">$mileage</span></p>
-                    <p class="vehicle-price right-aligned">$price</p>
+                    <p class="vehicle-price right-aligned">$$price</p>
+                    <p class="right-aligned vehicle-options">Options: $options</p>
 
                     <!-- form for payment calculation -->
 
