@@ -22,14 +22,8 @@
 </head>
 
 <body>
+<?php include "objects.php"; ?>
 
-<?php $vehicles =
-    [
-        [ "Astro", "Estrella", "2021", 500, 50000, "veh-01.jpg" ],
-        [ "Terraza", "Spinneo", "2020", 30000, 31000, "veh-02.jpg" ],
-        [ "Sage", "Ecostar", "2014", 70000, 15000, "veh-03.jpg" ]
-    ]
-?>
 
 <div class='outer-div'>
 <h1><?php echo "Hello World Autos" ?></h1>
@@ -43,28 +37,28 @@
         <!-- rows of vehicles -->
         <?php foreach($vehicles as $vehicle) {
 
-            $price = number_format($vehicle[4], 2);
+            $price = number_format($vehicle->price, 2);
 
             echo <<<FOREACHVEHICLE
             <tr>
                 <td class="top-aligned">
-                    <img class="thumbnail" src="images/$vehicle[5]" alt="vehicle picture">
+                    <img class="thumbnail" src="images/$vehicle->image" alt="vehicle picture">
                 </td>
                 <td>
-                    <p class="vehicle-make">$vehicle[0]</p>
-                    <p class="vehicle-model">$vehicle[1]</p>
+                    <p class="vehicle-make">$vehicle->make</p>
+                    <p class="vehicle-model">$vehicle->model</p>
                     <hr class="vehicle-hr">
-                    <p class="right-aligned"><span class="data-label">Year: </span><span class="vehicle-year">$vehicle[2]</span>
-                    &nbsp;&nbsp;<span class="data-label">Mileage: </span><span class="vehicle-mileage">$vehicle[3]</span></p>
+                    <p class="right-aligned"><span class="data-label">Year: </span><span class="vehicle-year">$vehicle->year</span>
+                    &nbsp;&nbsp;<span class="data-label">Mileage: </span><span class="vehicle-mileage">$vehicle->mileage</span></p>
                     <p class="vehicle-price right-aligned">$$price</p>
 
                     <!-- form for payment calculation -->
 
                     <form action="payment-plan.php" method="post">
-                        <input type="hidden" name="make" value="$vehicle[0]">
-                        <input type="hidden" name="model" value="$vehicle[1]">
-                        <input type="hidden" name="price" value="$vehicle[4]">
-                        <input type="hidden" name="image" value="$vehicle[5]">
+                        <input type="hidden" name="make" value="$vehicle->make">
+                        <input type="hidden" name="model" value="$vehicle->model">
+                        <input type="hidden" name="price" value="$vehicle->price">
+                        <input type="hidden" name="image" value="$vehicle->image">
                         <p>Choose your repayment duration: 
                             <select id="repayment-duration" name="repayment-duration">
                                 <option value="24">24</option>
