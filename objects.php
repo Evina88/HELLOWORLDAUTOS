@@ -1,6 +1,11 @@
 <?php 
 
-abstract class Vehicle {
+interface FormattedAccess {
+    function getFormattedMileage();
+    function getFormattedPrice();
+}
+
+abstract class Vehicle implements FormattedAccess{
 
     var $make;
     var $model;
@@ -8,6 +13,14 @@ abstract class Vehicle {
     var $mileage;
     var $price;
     var $image;
+
+    function getFormattedMileage() {
+        return number_format($this->mileage, 0);
+    }
+
+    function getFormattedPrice() {
+        return number_format($this->price, 2);
+    }
 
 }
 
