@@ -144,3 +144,14 @@ Commit: Interface and Methods
 It could be possible we didn't know how the function exactly works, 
 (it could be at a different file, for example) 
 but we know what it does.
+
+
+Commit: Polymorphism
+
+
+~ POLYMORPHISM (final pillar of OOP)
+The ability to override base-class behavior inside a derived class.
+Just define the same function, using the same name and parameters, and change the code to tailor your needs.
+
+
+
