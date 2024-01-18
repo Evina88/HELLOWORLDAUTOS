@@ -1,6 +1,6 @@
 Learn Object-Oriented Programming with PHP by Coursera Project Network
 
-1st commit: Create class Vehicle
+Commit: Vehicle class
 
 
 ~ A class is basically a blueprint of what specifically an object should be. 
@@ -67,7 +67,7 @@ CONSTRUCTOR
     // From now on when we create an object we need to pass these parameters to the constructor during the instantiation.
 
 
-2nd commit: class Truck with the extra property $engine
+Commit: class Truck (with the extra property $engine)
 
 
 ~ Inheritance is another pillar of OOP. It allows us to create new blueprints of objects, based on existing objects. 
@@ -97,3 +97,11 @@ CONSTRUCTOR
 ~ In the front-end, we check if this property exists and if so, we display an additional span with the info of the engine.
 
  	// if (property_exists($vehicle, "engine"))
+
+Commit: abstract class Vehicle
+
+~ When an object or class is abstract, it cannot be instantiated and used and therefore it doesn't have a constructor. 
+
+~ You have to inherit from it and define your own behavior.
+
+~ You cannot have more than one ancestors.
