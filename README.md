@@ -1,4 +1,5 @@
 Learn Object-Oriented Programming with PHP by Coursera Project Network
+Use a PHP Server extension on VS Code to see the results.
 
 Commit: Vehicle class
 
