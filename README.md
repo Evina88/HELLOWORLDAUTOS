@@ -93,3 +93,7 @@ CONSTRUCTOR
   		ex. $this->engine = $engine;
 
     // it is already passed as an argument to the Truck constructor above
+
+~ In the front-end, we check if this property exists and if so, we display an additional span with the info of the engine.
+
+ 	// if (property_exists($vehicle, "engine"))
