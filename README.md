@@ -1,10 +1,7 @@
-Learn Object-Oriented Programming with PHP 
-
-Coursera Project Network
+Learn Object-Oriented Programming with PHP by Coursera Project Network
 
 1st commit: Create class Vehicle
 
-Notes: 
 
 ~ A class is basically a blueprint of what specifically an object should be. 
 
