@@ -32,13 +32,18 @@ Learn Object-Oriented Programming with PHP by Coursera Project Network
     ex. $vehicle1->make; 
     // Since the line starts with a $, we don't need a second $ at make.)
 
+ENCAPSULATION
+
+
 ~ In a class, apart from properties, we can also have functions that manipulate them. 
                         
 They are called METHODS and we can decide whether the outside world has access to them or not.
 
 
+~ Encapsulation means that the code that manipulates the properties is all in one place and is one of the pillars of object oriented programming.
 
-~ Encapsulation means that the code that manipulates the properties is all in one place.
+
+CONSTRUCTOR
 
 ~ Constructor is a special function that is called, when objects are instantiated, with two underscores and the word construct.
 
@@ -62,4 +67,29 @@ They are called METHODS and we can decide whether the outside world has access t
     // From now on when we create an object we need to pass these parameters to the constructor during the instantiation.
 
 
+2nd commit: class Truck with the extra property $engine
 
+
+~ Inheritance is another pillar of OOP. It allows us to create new blueprints of objects, based on existing objects. 
+
+~ Ancestor and descendant relationship is also called a base-class and derived class relationship.
+
+	To inherit everything we use the word extends.
+	In order to use the constructor of the base-class inside the constructor of the descendant class,
+ 	we use this notation: the name of the object, then two colons and the name of the method that we want to call.
+  
+ 	ex. 
+	  	class Truck extends Vehicle {
+	  		function __construct($make, ..., $engine) {
+        			Vehicle::__construct($make, $model, $year, $mileage, $price, $image);
+	   		}
+		 }
+~ Create property $engine for Truck 
+	
+ 	// declare it inside the class
+	 	ex. var $engine;
+	
+ 	// initialize it in the constructor
+  		ex. $this->engine = $engine;
+
+    // it is already passed as an argument to the Truck constructor above
