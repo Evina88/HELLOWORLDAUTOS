@@ -1,5 +1,7 @@
-Learn Object-Oriented Programming with PHP by Coursera Project Network
 Use a PHP Server extension on VS Code to see the results.
+
+
+Notes from ''Learn Object-Oriented Programming with PHP'' course by Coursera Project Network
 
 Commit: Vehicle class
 
@@ -35,18 +37,17 @@ Commit: Vehicle class
 
 ENCAPSULATION
 
+~ Encapsulation means that the code that manipulates the properties is all in one place and is one of the pillars of object oriented programming.
 
 ~ In a class, apart from properties, we can also have functions that manipulate them. 
                         
 They are called METHODS and we can decide whether the outside world has access to them or not.
 
 
-~ Encapsulation means that the code that manipulates the properties is all in one place and is one of the pillars of object oriented programming.
 
+~ Constructor
 
-CONSTRUCTOR
-
-~ Constructor is a special function that is called, when objects are instantiated, with two underscores and the word construct.
+The constructor is a special function that is called, when objects are instantiated, with two underscores and the word construct.
 
     It is a good place to put your initialization code, code that has to be runned, before each object is created.
 
@@ -69,6 +70,8 @@ CONSTRUCTOR
 
 
 Commit: class Truck (with the extra property $engine)
+
+INHERITANCE
 
 
 ~ Inheritance is another pillar of OOP. It allows us to create new blueprints of objects, based on existing objects. 
@@ -106,3 +109,38 @@ Commit: abstract class Vehicle
 ~ You have to inherit from it and define your own behavior.
 
 ~ You cannot have more than one ancestors.
+
+Commit: Interface and Methods
+
+~ Interface is basically a binding contract or specification. If you implement aN interface, you have to implement whatever is specified in there.
+
+~ Interface doesn't have the actual code. It just specifies what the parameters and the name of the functions are.
+
+~ Define an interface with the keyword interface and follow the same convention as classes (capitalized).
+
+	// inside it we define the function that must be implemented.
+
+	ex. 
+ 		interface FormattedAccess{
+			function getFormattedMileage();
+  		}; 
+    
+~ To implement it to a class, use the keyword implements and the name of the interface.	
+
+ 	// Inside the class write the function and it's code
+	
+ 	ex.
+  		
+		function getFormattedMileage() {
+     			return number_format($this->mileage, 0);
+    		}
+
+~ In the front-end, we are asisigning the method to a string, inside the loop of $vehicles.
+	
+ 	ex.    $mileage = $vehicle->getFormattedMileage();
+
+~ ABSTRACTION (pillar of OOP)
+
+It could be possible we didn't know how the function exactly works, 
+(it could be at a different file, for example) 
+but we know what it does.
